@@ -40,12 +40,11 @@ pip install -r requirements.txt
 
 Where *<start_date>* & *<end_date>* must follow **mmddyyyy** format. 
 
-For example, if we want to scrape records for Sept 16, 2022 and save the result in the same repo named as test.csv, we would run 
+For example, if we want to scrape records between August 1, 2022 - September 1, 2022 and save the result in the same repo named as test.csv, we would run 
 the following command from the terminal: 
 ```
-python3 eviction_filing_scraper 'test.csv' '9162022' '9162022'
+python3 eviction_filing_scraper 'test.csv' '08012022' '09012022'
 ```
-
 
 ## Directory:
 * **README.md**: this file
