@@ -16,6 +16,35 @@ in the city. My team also wanted to see whether attorney representation for rent
 * **Chromedriver** 
 > Note, both Google Chrome & Chromedriver must be the same versions. I used Version 105. 
 
+## Running the app locally:
+
+#### 1. Clone this repo and cd into your local copy.
+
+```
+git clone https://github.com/sashafilippova/eviction_filings_scraper.git
+cd eviction_filings_scraper
+```
+
+#### 2. Create & activate virtual envirenment, install dependencies:
+```
+python3 -m venv env 
+source env/bin/activate
+pip install -r requirements.txt
+```
+
+#### 3. Update the _WEBDRIVER_LOCATION variable in **util.py** file with the location of webdriver on your local machine (line 29 as shown below):
+<img width="639" alt="image" src="https://user-images.githubusercontent.com/89982437/192162161-c48e1d12-bf03-47f1-8dbe-b8d52c38528a.png">
+
+#### 4. Run scraper, using the following format: 
+*python3 eviction_filing_scraper <file_name.csv> <start_date> <end_date>*
+
+Where *<start_date>* & *<end_date>* must follow **mmddyyyy** format. 
+
+For example, if we want to scrape records for Sept 16, 2022 and save the result in the same repo named as test.csv, we would run 
+the following command from the terminal: 
+```
+python3 eviction_filing_scraper 'test.csv' '9162022' '9162022'
+```
 
 
 ## Directory:
@@ -31,5 +60,5 @@ Scraped data can be found [here](https://github.com/sashafilippova/eviction_fili
 it hasn't been cleaned. If the fields are `None`, the website didn't have any info. For example, defendants in most cases don't have an attorney, so the field was left empty. 
 
 ## Next Steps: 
-- [ ] build a REST API to automate the scraper & provide access to the data
+- [ ] build a REST API to automate the scraper & provide access to the data (in progress)
 - [ ] clean addresses and geocode them into longitude/latitude
